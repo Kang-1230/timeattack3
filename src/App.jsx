@@ -7,12 +7,13 @@ export function App() {
 
   const [writeTitle, setWriteTitle] = useState("");
   const [writeViews, setWriteViews] = useState(0);
-  //이거어따쓰냐
 
   const { data, isPending, isError } = useQuery({
     queryKey: ["posts"],
     queryFn: () => axios.get("http://localhost:4000/posts"),
   });
+
+  // const { data : profileData, isPending: profileIsPending, isError : profileIsError}
 
   const { mutate } = useMutation({
     mutationFn: () =>
